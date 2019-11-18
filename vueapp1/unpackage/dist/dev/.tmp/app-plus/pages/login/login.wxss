@@ -1,0 +1,24 @@
+
+.loginRoot{
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.container{
+	width:80%;
+	padding:30px 20px;
+	padding-top: 15px;
+	background-color:rgba(245,245,245,0.8);
+	margin-top: 30px;
+}
+.itemRow{
+	margin-top: 15px;
+}
+.inputItem{
+	height:32px;
+	line-height: 32px;
+	background-color: white;
+	padding-left: 5px;
+}
+

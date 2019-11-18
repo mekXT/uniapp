@@ -1,0 +1,1 @@
+<view class="xtFlex loginRoot"><view class="container"><form data-event-opts="{{[['submit',[['formSubmit',['$event']]]]]}}" bindsubmit="__e"><view class="itemRow"><input class="inputItem" type="text" placeholder="请输入用户名"/></view><view class="itemRow"><input class="inputItem" type="text" password placeholder="请输入密码"/></view></form></view></view>
