@@ -1,5 +1,5 @@
 
-.loginRoot{
+.signRoot{
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;

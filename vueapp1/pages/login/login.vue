@@ -60,7 +60,9 @@
 				
 			},
 			toSign(){
-				this.$router.push({path:"/pages/sign/sign"})
+				uni.navigateTo({
+					url:'../sign/sign'
+				})
 			}
 		}
 	}

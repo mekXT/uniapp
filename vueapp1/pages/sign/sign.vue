@@ -39,7 +39,9 @@
 		},
 		methods:{
 			toLogin(){
-				this.$router.push({path:"/pages/login/login"})
+				uni.navigateTo({
+					url:"../login/login"
+				})
 			},
 			toSign(){
 				this.isDisabled = true;
