@@ -5,11 +5,12 @@ url: baseUrl+opts.url,
 data: data,
 method: opts.method,
 header: opts.method == 'get' ? {
-'X-Requested-With': 'XMLHttpRequest',
+//'X-Requested-With': 'XMLHttpRequest',
 "Accept": "application/json",
-"Content-Type": "application/json; charset=UTF-8"
+"Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
 } : {
-'X-Requested-With': 'XMLHttpRequest',
+//'X-Requested-With': 'XMLHttpRequest',
+"Accept": "application/json",
 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 },
 dataType: 'json',
@@ -45,11 +46,12 @@ header: opts.method == 'get' ? {
 //'Token': token,
 //'X-Requested-With': 'XMLHttpRequest',
 "Accept": "application/json",
-"Content-Type": "application/json; charset=UTF-8"
+"Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
 } : {
 //'Token': token,
 //'X-Requested-With': 'XMLHttpRequest',
-'Content-Type': 'application/x-www-form-urlencoded;'
+"Accept": "application/json",
+'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
 },
 dataType: 'json',
 }

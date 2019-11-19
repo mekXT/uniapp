@@ -3,13 +3,13 @@
 		<view class="container">
 			<form>
 				<view class="itemRow">
-					<input class="inputItem" type="text" placeholder="请输入用户名">
+					<input class="inputItem" type="text" v-model="username" placeholder="请输入用户名">
 				</view>
 				<view class="itemRow">
-					<input class="inputItem" type="text" password placeholder="请输入密码">
+					<input class="inputItem" type="text" v-model="password" password placeholder="请输入密码">
 				</view>
 				<view class="itemRow buttonContainer">
-					<button class="button" type="primary" @click="toLogin">login</button>
+					<button class="button" type="primary" v-bind:disabled="isDisabled" @click="toLogin">login</button>
 					<button class="button" type="default" @click="toSign">sign</button>
 				</view>
 			</form>
@@ -22,14 +22,41 @@
 
 <script>
 	
+	import http from "../../components/http"
+	
 	export default {
 		data(){
 			return {
 				resMsg : "返回信息",
+				username:"",
+				password:"",
+				isDisabled:false,
 			}
 		},
 		methods:{
 			toLogin(){
+				this.isDisabled = true;
+				var opt = {
+					url:"/api/login",
+					method:"post"
+				}
+				
+				var data = {
+					username:this.username,
+					password:this.password
+				}
+				
+				if(this.username != "" && this.password != "")
+				{
+					http.httpTokenRequest(opt,data).then((res)=>{
+						this.resMsg = res.data.msg;
+						this.isDisabled = false;
+					})
+				}
+				else{
+					this.resMsg = "请输入用户名密码"
+					this.isDisabled = false;
+				}
 				
 			},
 			toSign(){
