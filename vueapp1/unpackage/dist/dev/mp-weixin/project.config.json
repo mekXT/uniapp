@@ -8,8 +8,10 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
-	"appid": "touristappid",
+	"appid": "wxbffbad11b216b351",
 	"projectname": "vueapp1",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

@@ -5,7 +5,7 @@
 			<text class="title">{{title}}</text>
 		</view>
 		<view>
-			<navigator url="../login/login">to login</navigator>
+			<navigator url="../login/login">to login1</navigator>
 		</view>
 	</view>
 </template>

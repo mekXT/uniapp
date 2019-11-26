@@ -6,26 +6,30 @@ const bodyParser = require('body-parser');
 var connection = mysql.createConnection({
 	host:"localhost",
 	user:"root",
-	password:"123456789",
+	password:"root",
 	database:"eleme",
 	multipleStatements:true
 })
 
 exports.login = function(req,res){
-	var sql = "select password from user where username = ?"
+	var sql = "select * from user where username = ?"
 	var params = [req.body.username];
 	connection.query(sql,params,function(err,result){
 		if(err) throw err;
 		
 		var password1 = req.body.password;
-		var passwprd2 = result[0].password;
+		var password2 = "-1";
 		
+		if(result.length != 0)
+		{
+			password2 = result[0].password;
+		}
 		var resData = {
 			status:"1",
 			msg:"",
 		}
 		
-		if(password1 == passwprd2)
+		if(password1 == password2)
 		{
 			resData.status = "1",
 			resData.msg = "登录成功"
